@@ -1,0 +1,52 @@
+﻿@model GoRestUserManager.Models.UserViewModel
+
+<div class="card shadow-sm border-0 rounded mb-4">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0"><i class="bi bi-person-plus-fill"></i> Yeni Kullanıcı Ekle</h5>
+    </div>
+    <div class="card-body">
+        <form id="createForm">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Ad</label>
+                    <input asp-for="Name" class="form-control" placeholder="Adınızı girin" />
+                    <span asp-validation-for="Name" class="text-danger small"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Email</label>
+                    <input asp-for="Email" class="form-control" placeholder="E-posta adresi" />
+                    <span asp-validation-for="Email" class="text-danger small"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Cinsiyet</label>
+                    <select asp-for="Gender" class="form-select">
+                        <option value="">Seçiniz</option>
+                        <option value="male">Erkek</option>
+                        <option value="female">Kadın</option>
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger small"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Durum</label>
+                    <select asp-for="Status" class="form-select">
+                        <option value="">Seçiniz</option>
+                        <option value="active">Aktif</option>
+                        <option value="inactive">Pasif</option>
+                    </select>
+                    <span asp-validation-for="Status" class="text-danger small"></span>
+                </div>
+
+                <div class="col-12 text-end">
+                    <button type="submit" class="btn btn-success mt-3">
+                        <i class="bi bi-plus-circle"></i> Ekle
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <div id="resultMessage" class="mt-3"></div>
+    </div>
+</div>
